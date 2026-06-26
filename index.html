@@ -1,720 +1,914 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>RentRights – Know Your Rights as a Tenant in the USA</title>
-  <meta name="description" content="Plain-English guides to tenant rights in the USA. Can your landlord do that? Find out now — eviction rules, security deposits, repairs, and more."/>
-  <meta name="keywords" content="tenant rights, renter rights USA, can my landlord, eviction laws, security deposit rules, landlord tenant law"/>
-  <meta property="og:title" content="RentRights – Know Your Rights as a Tenant"/>
-  <meta property="og:description" content="Plain-English answers to your toughest renter questions. No lawyer needed."/>
-  <meta property="og:type" content="website"/>
-  <meta name="google-site-verification" content="mO0ZmRBFYfyj3wI-Io1AB2WCgZ0ezIkfrHdLi182cKs" />
+  <meta name="description" content="Plain-English guides to tenant rights in the USA. Eviction rules, security deposits, repairs, landlord entry, and more — all free."/>
+  <meta name="keywords" content="tenant rights, renter rights USA, eviction laws, security deposit, landlord tenant law"/>
+  <meta name="google-site-verification" content="mO0ZmRBFYfyj3wI-Io1AB2WCgZ0ezIkfrHdLi182cKs"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
-
-  <!-- ✅ REPLACE THIS WITH YOUR ADSENSE CODE AFTER APPROVAL -->
-  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
-
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --ink:     #1a1a2e;
-      --ink-mid: #3d3d5c;
-      --ink-light: #6b6b8a;
-      --paper:   #f7f6f2;
-      --cream:   #eeeae0;
-      --rule:    #d4cebc;
-      --accent:  #c0392b;
-      --accent2: #e74c3c;
-      --gold:    #b8860b;
+      --navy:    #0d1b2a;
+      --navy2:   #1b2d42;
+      --slate:   #2c3e50;
+      --steel:   #5b7a99;
+      --fog:     #e8edf2;
+      --paper:   #fafaf8;
+      --cream:   #f2ede4;
+      --rule:    #d6cfc4;
+      --gold:    #c9a84c;
+      --gold2:   #a07c2a;
+      --crimson: #8b1a1a;
       --white:   #ffffff;
-      --serif: 'DM Serif Display', Georgia, serif;
-      --sans:  'Inter', system-ui, sans-serif;
-      --mono:  'DM Mono', monospace;
+      --ink:     #1a1a2a;
+      --ink2:    #3a3a4a;
+      --ink3:    #6a6a7a;
+
+      --display: 'Playfair Display', Georgia, serif;
+      --serif:   'Source Serif 4', Georgia, serif;
+      --sans:    'DM Sans', system-ui, sans-serif;
     }
 
     html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--paper); color: var(--ink); }
 
-    body {
+    /* ── TOP BAR ── */
+    .topbar {
+      background: var(--navy);
+      border-bottom: 1px solid rgba(201,168,76,0.3);
+      padding: 0.4rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .topbar-left {
       font-family: var(--sans);
-      background: var(--paper);
-      color: var(--ink);
-      font-size: 16px;
-      line-height: 1.6;
+      font-size: 0.72rem;
+      color: #7a9ab8;
+      letter-spacing: 0.04em;
+    }
+    .topbar-right {
+      display: flex;
+      gap: 1.5rem;
+    }
+    .topbar-right a {
+      font-size: 0.72rem;
+      color: #7a9ab8;
+      text-decoration: none;
+      letter-spacing: 0.04em;
+    }
+    .topbar-right a:hover { color: var(--gold); }
+
+    /* ── MASTHEAD ── */
+    .masthead {
+      background: var(--navy);
+      padding: 1.75rem 2rem 1.5rem;
+      text-align: center;
+      border-bottom: 3px solid var(--gold);
+    }
+    .masthead-eyebrow {
+      font-family: var(--sans);
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.6rem;
+    }
+    .masthead h1 {
+      font-family: var(--display);
+      font-size: clamp(2.6rem, 6vw, 4.5rem);
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.01em;
+      line-height: 1;
+    }
+    .masthead-rule {
+      width: 48px;
+      height: 2px;
+      background: var(--gold);
+      margin: 0.9rem auto;
+    }
+    .masthead-tagline {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 300;
+      font-size: 1rem;
+      color: #8aaac4;
+      letter-spacing: 0.02em;
     }
 
-    /* ── NAVIGATION ── */
-    nav {
-      background: var(--ink);
+    /* ── NAV ── */
+    .nav-strip {
+      background: var(--navy2);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
       padding: 0 2rem;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      height: 56px;
+      justify-content: center;
+      gap: 0;
       position: sticky;
       top: 0;
       z-index: 100;
     }
-    .nav-brand {
-      font-family: var(--mono);
-      font-size: 1.1rem;
-      font-weight: 500;
-      color: var(--white);
-      text-decoration: none;
-      letter-spacing: 0.02em;
-    }
-    .nav-brand span { color: var(--accent2); }
-    .nav-links { display: flex; gap: 1.5rem; list-style: none; }
-    .nav-links a {
-      color: #b0aec8;
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 500;
-      letter-spacing: 0.03em;
-      text-transform: uppercase;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--white); }
-
-    /* ── HERO ── */
-    .hero {
-      background: var(--ink);
-      color: var(--white);
-      padding: 5rem 2rem 4rem;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: -60px; left: 50%;
-      transform: translateX(-50%);
-      width: 600px; height: 600px;
-      background: radial-gradient(circle, rgba(192,57,43,0.15) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .hero-eyebrow {
-      font-family: var(--mono);
-      font-size: 0.78rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent2);
-      margin-bottom: 1.25rem;
-    }
-    .hero h1 {
-      font-family: var(--serif);
-      font-size: clamp(2.2rem, 5vw, 3.8rem);
-      line-height: 1.15;
-      max-width: 780px;
-      margin: 0 auto 1.25rem;
-      font-weight: 400;
-    }
-    .hero h1 em {
-      font-style: italic;
-      color: #e8a0a0;
-    }
-    .hero-sub {
-      color: #a8a6c0;
-      font-size: 1.05rem;
-      max-width: 520px;
-      margin: 0 auto 2rem;
-    }
-    .hero-search {
-      display: flex;
-      max-width: 520px;
-      margin: 0 auto;
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 6px;
-      overflow: hidden;
-    }
-    .hero-search input {
-      flex: 1;
-      background: transparent;
-      border: none;
-      padding: 0.85rem 1rem;
-      color: var(--white);
-      font-family: var(--sans);
-      font-size: 0.95rem;
-      outline: none;
-    }
-    .hero-search input::placeholder { color: #7878a0; }
-    .hero-search button {
-      background: var(--accent);
-      border: none;
-      padding: 0.85rem 1.4rem;
-      color: white;
-      font-family: var(--sans);
-      font-size: 0.9rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-    .hero-search button:hover { background: var(--accent2); }
-
-    /* ── STAT STRIP ── */
-    .stat-strip {
-      background: var(--cream);
-      border-bottom: 1px solid var(--rule);
-      display: flex;
-      justify-content: center;
-      gap: 0;
-      flex-wrap: wrap;
-    }
-    .stat {
-      padding: 1rem 2.5rem;
-      text-align: center;
-      border-right: 1px solid var(--rule);
-    }
-    .stat:last-child { border-right: none; }
-    .stat-num {
-      font-family: var(--serif);
-      font-size: 1.6rem;
-      color: var(--accent);
+    .nav-strip a {
       display: block;
-    }
-    .stat-label {
-      font-size: 0.75rem;
-      color: var(--ink-light);
+      padding: 0.8rem 1.25rem;
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
+      color: #8aaac4;
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .nav-strip a:hover {
+      color: var(--white);
+      border-bottom-color: var(--gold);
     }
 
-    /* ── MAIN LAYOUT ── */
-    .container {
-      max-width: 1080px;
+    /* ── LAYOUT ── */
+    .page-wrap {
+      max-width: 1120px;
       margin: 0 auto;
       padding: 0 1.5rem;
     }
 
-    /* ── SECTION HEADER ── */
-    .section-head {
-      padding: 3rem 0 1.5rem;
-      border-bottom: 2px solid var(--ink);
-      margin-bottom: 2rem;
-    }
-    .section-head h2 {
-      font-family: var(--serif);
-      font-size: clamp(1.6rem, 3vw, 2.2rem);
-      font-weight: 400;
-    }
-    .section-head p {
-      color: var(--ink-mid);
-      margin-top: 0.4rem;
-      font-size: 0.95rem;
-    }
-
-    /* ── QUESTION CARDS (main content) ── */
-    .questions-grid {
+    /* ── HERO FEATURE ── */
+    .hero-section {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1px;
-      background: var(--rule);
-      border: 1px solid var(--rule);
-      margin-bottom: 3rem;
+      grid-template-columns: 1fr 340px;
+      gap: 0;
+      border-bottom: 1px solid var(--rule);
+      margin: 2rem 0 0;
     }
-    .q-card {
-      background: var(--white);
-      padding: 1.5rem;
-      transition: background 0.15s;
-      cursor: pointer;
-      text-decoration: none;
-      display: block;
-      color: inherit;
+    .hero-main {
+      padding: 2rem 2rem 2rem 0;
+      border-right: 1px solid var(--rule);
     }
-    .q-card:hover { background: #faf9f5; }
-    .q-tag {
-      font-family: var(--mono);
+    .hero-label {
+      font-family: var(--sans);
       font-size: 0.68rem;
-      letter-spacing: 0.08em;
+      font-weight: 600;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 0.6rem;
+      color: var(--crimson);
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .hero-label::after {
+      content: '';
+      display: block;
+      flex: 1;
+      height: 1px;
+      background: var(--rule);
+    }
+    .hero-main h2 {
+      font-family: var(--display);
+      font-size: clamp(1.9rem, 3.5vw, 2.9rem);
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--ink);
+      margin-bottom: 1rem;
+      letter-spacing: -0.015em;
+    }
+    .hero-main h2 em {
+      font-weight: 400;
+      font-style: italic;
+      color: var(--crimson);
+    }
+    .hero-main p {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      color: var(--ink2);
+      line-height: 1.7;
+      max-width: 560px;
+      margin-bottom: 1.5rem;
+    }
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--navy);
+      color: var(--white);
+      text-decoration: none;
+      padding: 0.75rem 1.5rem;
+      font-family: var(--sans);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border: 1px solid var(--navy);
+      transition: background 0.15s;
+    }
+    .hero-cta:hover { background: var(--navy2); }
+    .hero-cta-ghost {
+      background: transparent;
+      color: var(--navy);
+      border-color: var(--navy);
+      margin-left: 0.75rem;
+    }
+    .hero-cta-ghost:hover { background: var(--fog); }
+
+    .hero-side {
+      padding: 2rem 0 2rem 2rem;
+    }
+    .side-label {
+      font-family: var(--sans);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink3);
+      padding-bottom: 0.6rem;
+      border-bottom: 2px solid var(--ink);
+      margin-bottom: 1rem;
+    }
+    .side-list { list-style: none; }
+    .side-list li {
+      border-bottom: 1px solid var(--rule);
+      padding: 0.85rem 0;
+    }
+    .side-list li a {
+      font-family: var(--serif);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--ink);
+      text-decoration: none;
+      line-height: 1.35;
       display: block;
     }
-    .q-card h3 {
-      font-family: var(--serif);
-      font-size: 1.1rem;
-      font-weight: 400;
-      line-height: 1.35;
-      margin-bottom: 0.5rem;
-    }
-    .q-card p {
-      font-size: 0.875rem;
-      color: var(--ink-mid);
-      line-height: 1.55;
-    }
-    .q-arrow {
-      display: inline-block;
-      margin-top: 0.75rem;
-      font-size: 0.8rem;
-      color: var(--accent);
-      font-weight: 600;
+    .side-list li a:hover { color: var(--crimson); }
+    .side-list li span {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      color: var(--ink3);
+      display: block;
+      margin-top: 0.25rem;
     }
 
-    /* ── FEATURED ARTICLE ── */
-    .featured {
-      background: var(--ink);
-      color: var(--white);
-      padding: 2.5rem;
-      margin-bottom: 3rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      align-items: center;
+    /* ── STAT BAR ── */
+    .stat-bar {
+      background: var(--cream);
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      display: flex;
+      justify-content: center;
+      margin: 2rem 0;
     }
-    @media(max-width: 640px){ .featured { grid-template-columns: 1fr; } }
-    .featured-tag {
-      font-family: var(--mono);
+    .stat-item {
+      padding: 1.25rem 3rem;
+      text-align: center;
+      border-right: 1px solid var(--rule);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-num {
+      font-family: var(--display);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--navy);
+      display: block;
+      line-height: 1;
+    }
+    .stat-label {
+      font-family: var(--sans);
       font-size: 0.7rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--accent2);
+      color: var(--ink3);
+      margin-top: 0.3rem;
+    }
+
+    /* ── SECTION HEAD ── */
+    .section-head {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      padding: 0.5rem 0 0.75rem;
+      border-bottom: 2px solid var(--ink);
+      margin: 2.5rem 0 1.5rem;
+    }
+    .section-head h2 {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink);
+    }
+    .section-head-line {
+      flex: 1;
+      height: 1px;
+      background: var(--rule);
+    }
+    .section-head a {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      color: var(--crimson);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── ARTICLE GRID ── */
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border-top: 1px solid var(--rule);
+      border-left: 1px solid var(--rule);
+      margin-bottom: 2.5rem;
+    }
+    .article-card {
+      border-right: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      padding: 1.5rem;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      transition: background 0.12s;
+    }
+    .article-card:hover { background: var(--cream); }
+    .card-category {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--crimson);
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+    .card-title {
+      font-family: var(--display);
+      font-size: 1.15rem;
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--ink);
+      margin-bottom: 0.6rem;
+      letter-spacing: -0.01em;
+    }
+    .card-excerpt {
+      font-family: var(--serif);
+      font-size: 0.875rem;
+      color: var(--ink2);
+      line-height: 1.6;
       margin-bottom: 0.75rem;
     }
-    .featured h2 {
+    .card-meta {
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      color: var(--ink3);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .card-meta::before {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    /* ── FEATURED BOX ── */
+    .featured-strip {
+      background: var(--navy);
+      padding: 2.5rem;
+      margin: 1rem 0 2.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .featured-strip .label {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+    .featured-strip h3 {
+      font-family: var(--display);
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+    .featured-strip p {
       font-family: var(--serif);
-      font-size: clamp(1.4rem, 2.5vw, 1.9rem);
-      font-weight: 400;
-      line-height: 1.25;
-      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      color: #8aaac4;
+      margin-bottom: 1.25rem;
+      line-height: 1.65;
     }
-    .featured p { color: #b0aec8; font-size: 0.9rem; margin-bottom: 1.25rem; }
-    .btn-primary {
+    .btn-gold {
       display: inline-block;
-      background: var(--accent);
-      color: white;
-      padding: 0.7rem 1.4rem;
+      background: var(--gold);
+      color: var(--navy);
       text-decoration: none;
-      font-size: 0.875rem;
+      padding: 0.65rem 1.4rem;
+      font-family: var(--sans);
+      font-size: 0.78rem;
       font-weight: 600;
-      border-radius: 3px;
-      transition: background 0.2s;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: background 0.15s;
     }
-    .btn-primary:hover { background: var(--accent2); }
+    .btn-gold:hover { background: #d4b05a; }
     .featured-checklist { list-style: none; }
     .featured-checklist li {
+      font-family: var(--serif);
+      font-size: 0.9rem;
+      color: #c0d4e8;
       padding: 0.6rem 0;
       border-bottom: 1px solid rgba(255,255,255,0.08);
-      font-size: 0.9rem;
-      color: #c8c6e0;
       display: flex;
-      gap: 0.6rem;
+      gap: 0.75rem;
       align-items: flex-start;
+      line-height: 1.5;
     }
     .featured-checklist li::before {
-      content: '✓';
-      color: var(--accent2);
-      font-weight: 700;
+      content: '→';
+      color: var(--gold);
       flex-shrink: 0;
       margin-top: 1px;
     }
 
-    /* ── AD PLACEHOLDER ── */
-    .ad-box {
-      background: var(--cream);
-      border: 1px dashed var(--rule);
-      border-radius: 4px;
-      padding: 2rem;
-      text-align: center;
-      margin: 2rem 0;
-      color: var(--ink-light);
-      font-size: 0.8rem;
-      font-family: var(--mono);
-    }
-
-    /* ── STATE GUIDE ── */
+    /* ── STATE GRID ── */
+    .states-section { margin: 0 0 3rem; }
     .states-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-      gap: 0.75rem;
-      margin-bottom: 3rem;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 0;
+      border-top: 1px solid var(--rule);
+      border-left: 1px solid var(--rule);
     }
     .state-card {
-      background: var(--white);
-      border: 1px solid var(--rule);
-      padding: 0.9rem 1rem;
+      border-right: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      padding: 0.9rem 0.75rem;
       text-align: center;
-      cursor: pointer;
-      transition: all 0.15s;
       text-decoration: none;
       color: var(--ink);
-      border-radius: 3px;
-    }
-    .state-card:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      transform: translateY(-1px);
-    }
-    .state-card .state-abbr {
-      font-family: var(--mono);
-      font-size: 1.1rem;
-      font-weight: 500;
       display: block;
+      transition: background 0.12s;
     }
-    .state-card .state-name {
-      font-size: 0.72rem;
-      color: var(--ink-light);
+    .state-card:hover { background: var(--navy); color: var(--white); }
+    .state-abbr {
+      font-family: var(--display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      display: block;
+      line-height: 1;
+    }
+    .state-name {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      letter-spacing: 0.04em;
+      color: var(--ink3);
       margin-top: 0.2rem;
     }
+    .state-card:hover .state-name { color: #8aaac4; }
 
-    /* ── FAQ ACCORDION ── */
-    .faq-list { margin-bottom: 3rem; }
-    .faq-item {
-      border-bottom: 1px solid var(--rule);
-    }
-    .faq-q {
+    /* ── FAQ ── */
+    .faq-section { margin: 0 0 3rem; }
+    .faq-item { border-bottom: 1px solid var(--rule); }
+    .faq-btn {
       width: 100%;
       background: none;
       border: none;
       padding: 1.1rem 0;
-      text-align: left;
-      font-family: var(--serif);
-      font-size: 1.05rem;
-      color: var(--ink);
-      cursor: pointer;
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 1rem;
+      cursor: pointer;
+      text-align: left;
+      font-family: var(--display);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--ink);
+      transition: color 0.15s;
     }
-    .faq-q:hover { color: var(--accent); }
+    .faq-btn:hover { color: var(--crimson); }
     .faq-icon {
-      font-size: 1.3rem;
-      color: var(--accent);
+      font-size: 1.1rem;
+      color: var(--gold);
       flex-shrink: 0;
       transition: transform 0.2s;
+      font-family: var(--sans);
+      font-weight: 400;
     }
-    .faq-a {
+    .faq-body {
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.3s ease, padding 0.2s;
-      font-size: 0.9rem;
-      color: var(--ink-mid);
-      line-height: 1.7;
+      transition: max-height 0.3s ease;
     }
-    .faq-item.open .faq-a {
-      max-height: 400px;
-      padding-bottom: 1.1rem;
+    .faq-body p {
+      font-family: var(--serif);
+      font-size: 0.925rem;
+      color: var(--ink2);
+      line-height: 1.75;
+      padding-bottom: 1.25rem;
     }
+    .faq-item.open .faq-body { max-height: 300px; }
     .faq-item.open .faq-icon { transform: rotate(45deg); }
 
     /* ── DISCLAIMER ── */
     .disclaimer {
-      background: #fff8e1;
+      background: #fdf8ee;
+      border: 1px solid #e8d9a0;
       border-left: 4px solid var(--gold);
       padding: 1rem 1.25rem;
       margin: 2rem 0;
-      font-size: 0.82rem;
-      color: #5a4500;
-      border-radius: 0 4px 4px 0;
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      color: #5a4800;
+      line-height: 1.6;
     }
-    .disclaimer strong { font-weight: 600; }
 
-    /* ── NEWSLETTER ── */
-    .newsletter {
-      background: var(--cream);
-      border: 1px solid var(--rule);
-      padding: 2.5rem;
+    /* ── AD BOX ── */
+    .ad-box {
+      background: var(--fog);
+      border: 1px dashed #c0cbd6;
+      padding: 2rem;
       text-align: center;
-      margin: 3rem 0;
-    }
-    .newsletter h3 {
-      font-family: var(--serif);
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
-    }
-    .newsletter p { color: var(--ink-mid); font-size: 0.9rem; margin-bottom: 1.25rem; }
-    .newsletter-form {
-      display: flex;
-      max-width: 420px;
-      margin: 0 auto;
-      gap: 0.5rem;
-    }
-    .newsletter-form input {
-      flex: 1;
-      padding: 0.75rem 1rem;
-      border: 1px solid var(--rule);
-      background: white;
+      margin: 2rem 0;
+      color: var(--ink3);
       font-family: var(--sans);
-      font-size: 0.9rem;
-      border-radius: 3px;
-      outline: none;
-    }
-    .newsletter-form input:focus { border-color: var(--accent); }
-    .newsletter-form button {
-      background: var(--ink);
-      color: white;
-      border: none;
-      padding: 0.75rem 1.25rem;
-      font-family: var(--sans);
-      font-size: 0.875rem;
-      font-weight: 600;
-      border-radius: 3px;
-      cursor: pointer;
+      font-size: 0.75rem;
+      letter-spacing: 0.04em;
     }
 
     /* ── FOOTER ── */
     footer {
-      background: var(--ink);
-      color: #8888aa;
-      padding: 2.5rem 2rem;
-      text-align: center;
-      font-size: 0.82rem;
-      line-height: 1.8;
+      background: var(--navy);
+      border-top: 3px solid var(--gold);
+      padding: 3rem 2rem 2rem;
     }
-    footer a { color: #a0a0c0; text-decoration: none; }
-    footer a:hover { color: white; }
-    .footer-links { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+    .footer-grid {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      margin-bottom: 1.5rem;
+    }
+    .footer-brand {
+      font-family: var(--display);
+      font-size: 1.5rem;
+      color: var(--white);
+      margin-bottom: 0.75rem;
+    }
+    .footer-brand span { color: var(--gold); }
+    .footer-desc {
+      font-family: var(--serif);
+      font-size: 0.875rem;
+      color: #6a8aaa;
+      line-height: 1.65;
+    }
+    .footer-col h4 {
+      font-family: var(--sans);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(201,168,76,0.3);
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 0.5rem; }
+    .footer-col ul li a {
+      font-family: var(--sans);
+      font-size: 0.82rem;
+      color: #8aaac4;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .footer-col ul li a:hover { color: var(--white); }
+    .footer-bottom {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      color: #4a6a8a;
+    }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 600px) {
-      .stat-strip { flex-direction: column; }
-      .stat { border-right: none; border-bottom: 1px solid var(--rule); }
-      .nav-links { display: none; }
-      .hero-search { flex-direction: column; }
-      .hero-search button { border-radius: 0; }
-      .newsletter-form { flex-direction: column; }
+    @media (max-width: 768px) {
+      .hero-section { grid-template-columns: 1fr; }
+      .hero-main { padding: 1.5rem 0; border-right: none; border-bottom: 1px solid var(--rule); }
+      .hero-side { padding: 1.5rem 0; }
+      .articles-grid { grid-template-columns: 1fr; }
+      .featured-strip { grid-template-columns: 1fr; gap: 1.5rem; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .stat-item { padding: 1rem 1.5rem; }
+      .topbar-right { display: none; }
+      .nav-strip a { padding: 0.7rem 0.75rem; font-size: 0.72rem; }
+    }
+    @media (max-width: 480px) {
+      .footer-grid { grid-template-columns: 1fr; }
+      .stat-bar { flex-wrap: wrap; }
     }
   </style>
 </head>
 <body>
 
-<!-- NAVIGATION -->
-<nav>
-  <a class="nav-brand" href="#"><span>Rent</span>Rights</a>
-  <ul class="nav-links">
-    <li><a href="#questions">Common Questions</a></li>
-    <li><a href="#states">By State</a></li>
-    <li><a href="#faq">Quick FAQ</a></li>
-  </ul>
-</nav>
-
-<!-- HERO -->
-<section class="hero">
-  <p class="hero-eyebrow">Free Legal Guides for US Renters</p>
-  <h1>Can your landlord <em>actually</em> do that?</h1>
-  <p class="hero-sub">Plain-English answers to your toughest renter questions — eviction, deposits, repairs, entry, and more.</p>
-  <div class="hero-search">
-    <input type="text" placeholder="e.g. Can my landlord enter without notice?" id="searchInput"/>
-    <button onclick="handleSearch()">Search</button>
+<!-- TOP BAR -->
+<div class="topbar">
+  <span class="topbar-left">Free Legal Guides for US Renters · Updated June 2026</span>
+  <div class="topbar-right">
+    <a href="#">About</a>
+    <a href="#">Privacy</a>
+    <a href="#">Contact</a>
   </div>
-</section>
-
-<!-- STATS -->
-<div class="stat-strip">
-  <div class="stat"><span class="stat-num">44M</span><span class="stat-label">US Renters</span></div>
-  <div class="stat"><span class="stat-num">50</span><span class="stat-label">States Covered</span></div>
-  <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Free Guides</span></div>
-  <div class="stat"><span class="stat-num">No</span><span class="stat-label">Lawyer Needed</span></div>
 </div>
 
-<!-- MAIN CONTENT -->
-<main class="container">
+<!-- MASTHEAD -->
+<header class="masthead">
+  <p class="masthead-eyebrow">The Tenant Rights Reference</p>
+  <h1>RentRights</h1>
+  <div class="masthead-rule"></div>
+  <p class="masthead-tagline">Plain-English answers to every renter's toughest questions</p>
+</header>
 
-  <!-- DISCLAIMER -->
-  <div class="disclaimer" style="margin-top:2rem;">
-    <strong>⚖️ Not Legal Advice:</strong> RentRights provides general educational information only. For your specific situation, consult a licensed attorney in your state.
+<!-- NAVIGATION -->
+<nav class="nav-strip">
+  <a href="#guides">Guides</a>
+  <a href="#states">By State</a>
+  <a href="#eviction">Eviction</a>
+  <a href="#deposits">Deposits</a>
+  <a href="#repairs">Repairs</a>
+  <a href="#faq">FAQ</a>
+</nav>
+
+<div class="page-wrap">
+
+  <!-- HERO -->
+  <section class="hero-section" id="guides">
+    <div class="hero-main">
+      <p class="hero-label">Most Read This Week</p>
+      <h2>Can your landlord enter your home <em>without notice?</em></h2>
+      <p>In almost every US state, your landlord must give 24–48 hours advance notice before entering your rental unit. Entering without notice — outside of genuine emergencies — is illegal, and entitles you to remedies.</p>
+      <a href="landlord-entry-without-notice.html" class="hero-cta">Read the Full Guide</a>
+      <a href="#guides" class="hero-cta hero-cta-ghost">All Guides</a>
+    </div>
+    <div class="hero-side">
+      <p class="side-label">Essential Guides</p>
+      <ul class="side-list">
+        <li>
+          <a href="security-deposit-laws-by-state.html">Security Deposit Laws by State 2026</a>
+          <span>Limits · Deadlines · Deductions</span>
+        </li>
+        <li>
+          <a href="how-to-fight-eviction-notice.html">How to Fight an Eviction Notice</a>
+          <span>Step-by-step defense guide</span>
+        </li>
+        <li>
+          <a href="normal-wear-and-tear-vs-damage.html">Normal Wear and Tear vs. Damage</a>
+          <span>Room-by-room examples</span>
+        </li>
+        <li>
+          <a href="landlord-wont-make-repairs.html">Landlord Won't Make Repairs</a>
+          <span>Your 5 legal options</span>
+        </li>
+        <li>
+          <a href="can-landlord-raise-rent-mid-lease.html">Can Landlord Raise Rent Mid-Lease?</a>
+          <span>Rent control · Notice rules</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- STAT BAR -->
+  <div class="stat-bar">
+    <div class="stat-item"><span class="stat-num">44M</span><span class="stat-label">US Renters</span></div>
+    <div class="stat-item"><span class="stat-num">50</span><span class="stat-label">States Covered</span></div>
+    <div class="stat-item"><span class="stat-num">100%</span><span class="stat-label">Free Guides</span></div>
+    <div class="stat-item"><span class="stat-num">$0</span><span class="stat-label">No Lawyer Needed</span></div>
   </div>
 
-  <!-- AD PLACEHOLDER (replace with real AdSense code after approval) -->
-  <div class="ad-box">[ AdSense Ad Unit — 728x90 — Place your code here after approval ]</div>
+  <!-- AD -->
+  <div class="ad-box">[ Advertisement — AdSense 728×90 — Replace after approval ]</div>
 
-  <!-- COMMON QUESTIONS -->
-  <div class="section-head" id="questions">
-    <h2>Common Tenant Questions</h2>
-    <p>The questions every renter asks — answered clearly.</p>
+  <!-- ARTICLE GRID -->
+  <div class="section-head">
+    <h2>All Tenant Rights Guides</h2>
+    <div class="section-head-line"></div>
+    <a href="#">View All →</a>
   </div>
 
-  <div class="questions-grid">
-    <a class="q-card" href="#">
-      <span class="q-tag">Eviction</span>
-      <h3>Can my landlord evict me without going to court?</h3>
-      <p>In every US state, a landlord must file a lawsuit in court before legally removing a tenant. Self-help eviction is illegal.</p>
-      <span class="q-arrow">Read full guide →</span>
+  <div class="articles-grid">
+    <a class="article-card" href="landlord-entry-without-notice.html">
+      <span class="card-category">Privacy Rights</span>
+      <div class="card-title">Can My Landlord Enter Without Notice?</div>
+      <p class="card-excerpt">Every state's notice requirements, what counts as an emergency, and what you can do if your landlord enters illegally.</p>
+      <div class="card-meta">8 min read · All 50 States</div>
     </a>
-    <a class="q-card" href="#">
-      <span class="q-tag">Security Deposit</span>
-      <h3>How long does a landlord have to return my deposit?</h3>
-      <p>Deadlines vary by state — from 14 days (Massachusetts) to 60 days (Georgia). Find your state's exact rule below.</p>
-      <span class="q-arrow">Read full guide →</span>
+    <a class="article-card" href="security-deposit-laws-by-state.html">
+      <span class="card-category">Security Deposits</span>
+      <div class="card-title">Security Deposit Laws by State 2026</div>
+      <p class="card-excerpt">Maximum deposit limits, return deadlines, and penalties for wrongful withholding — all 50 states in one table.</p>
+      <div class="card-meta">10 min read · All 50 States</div>
     </a>
-    <a class="q-card" href="#">
-      <span class="q-tag">Landlord Entry</span>
-      <h3>Can my landlord enter my apartment without permission?</h3>
-      <p>Most states require 24–48 hours notice except in genuine emergencies. Repeated unannounced entry may be harassment.</p>
-      <span class="q-arrow">Read full guide →</span>
+    <a class="article-card" href="how-to-fight-eviction-notice.html">
+      <span class="card-category">Eviction Defense</span>
+      <div class="card-title">How to Fight an Eviction Notice</div>
+      <p class="card-excerpt">Received an eviction notice? Don't panic. Know your rights, your timeline, and the defenses that actually work.</p>
+      <div class="card-meta">12 min read · Step-by-Step</div>
     </a>
-    <a class="q-card" href="#">
-      <span class="q-tag">Repairs</span>
-      <h3>My landlord won't fix the heat. What are my rights?</h3>
-      <p>Landlords must maintain "habitable" conditions. If they fail, you may have the right to repair-and-deduct or withhold rent.</p>
-      <span class="q-arrow">Read full guide →</span>
+    <a class="article-card" href="normal-wear-and-tear-vs-damage.html">
+      <span class="card-category">Move-Out</span>
+      <div class="card-title">Normal Wear and Tear vs. Damage</div>
+      <p class="card-excerpt">Room-by-room examples of what landlords can and cannot charge you for. The most disputed topic in tenant law.</p>
+      <div class="card-meta">9 min read · With Examples</div>
     </a>
-    <a class="q-card" href="#">
-      <span class="q-tag">Rent Increase</span>
-      <h3>Can my landlord raise rent in the middle of my lease?</h3>
-      <p>No — a fixed-term lease locks in your rent. Increases are only allowed when the lease ends, and often require written notice.</p>
-      <span class="q-arrow">Read full guide →</span>
+    <a class="article-card" href="landlord-wont-make-repairs.html">
+      <span class="card-category">Habitability</span>
+      <div class="card-title">Landlord Won't Make Repairs — Your Rights</div>
+      <p class="card-excerpt">From repair-and-deduct to rent withholding to breaking your lease — the full spectrum of legal options available to you.</p>
+      <div class="card-meta">10 min read · All Options Covered</div>
     </a>
-    <a class="q-card" href="#">
-      <span class="q-tag">Retaliation</span>
-      <h3>Can a landlord evict me for complaining about conditions?</h3>
-      <p>Retaliatory eviction is illegal in most states. If you reported a code violation, you may have strong legal protection.</p>
-      <span class="q-arrow">Read full guide →</span>
+    <a class="article-card" href="can-landlord-raise-rent-mid-lease.html">
+      <span class="card-category">Rent Increases</span>
+      <div class="card-title">Can My Landlord Raise Rent Mid-Lease?</div>
+      <p class="card-excerpt">Fixed leases, month-to-month tenancies, rent control cities, and notice requirements — everything you need to know.</p>
+      <div class="card-meta">8 min read · All 50 States</div>
     </a>
   </div>
 
-  <!-- FEATURED ARTICLE -->
-  <div class="featured">
+  <!-- FEATURED -->
+  <div class="featured-strip">
     <div>
-      <p class="featured-tag">Most Read Guide</p>
-      <h2>The Complete 2026 Tenant Rights Checklist</h2>
-      <p>Everything you need to know before signing, during your tenancy, and when moving out — in one clear guide.</p>
-      <a href="#" class="btn-primary">Read the Full Guide</a>
+      <p class="label">Essential Reading</p>
+      <h3>The Complete 2026 Tenant Rights Checklist</h3>
+      <p>Everything you need to know before signing a lease, during your tenancy, and when moving out — in one comprehensive guide.</p>
+      <a href="#" class="btn-gold">Read the Full Guide</a>
     </div>
     <ul class="featured-checklist">
-      <li>What to check before signing any lease</li>
-      <li>Your rights during a landlord inspection</li>
-      <li>How to document damage properly (with photos)</li>
+      <li>What to inspect and document before you move in</li>
+      <li>Your rights during landlord inspections</li>
+      <li>How to photograph damage properly</li>
       <li>What "habitability" legally means in your state</li>
-      <li>Step-by-step: disputing an unfair deposit deduction</li>
-      <li>When to contact a tenant rights lawyer for free</li>
+      <li>How to dispute unfair deposit deductions</li>
+      <li>When to contact a tenant attorney — for free</li>
     </ul>
   </div>
 
-  <!-- AD PLACEHOLDER -->
-  <div class="ad-box">[ AdSense Ad Unit — 336x280 — Place your code here after approval ]</div>
+  <!-- AD -->
+  <div class="ad-box">[ Advertisement — AdSense 336×280 — Replace after approval ]</div>
 
-  <!-- STATE GUIDES -->
-  <div class="section-head" id="states">
-    <h2>Tenant Laws by State</h2>
-    <p>Select your state for specific rules on deposits, eviction notice periods, and landlord entry.</p>
+  <!-- STATES -->
+  <section class="states-section" id="states">
+    <div class="section-head">
+      <h2>Tenant Laws by State</h2>
+      <div class="section-head-line"></div>
+      <a href="#">All States →</a>
+    </div>
+    <div class="states-grid">
+      <a class="state-card" href="#"><span class="state-abbr">CA</span><span class="state-name">California</span></a>
+      <a class="state-card" href="#"><span class="state-abbr">TX</span><span class="state-name">Texas</span></a>
+      <a class="state-card" href="#"><span class="state-abbr">FL</span><span class="state-name">Florida</span></a>
+      <a class="state-card" href="#"><span class="state-abbr">NY</span><span class="state-name">New York</span></a>
+      <a class="state-card" href="#"><span class="state-abbr">IL</span><span class="state-name">Illinois</span></a>
+      <a class="state-card" href="#"><span class="state-abbr">PA</span><span class="state-name">Pennsylvania</span></a>
+      <a class="state-card" href="#"><span class="state-abbr">OH</span><span class="state-name">Ohio</span></a>
+      <a class="state-card" href="#"><span class="state-abbr">GA</span><span class="state-name">Georgia</span></a>
+      <a class="state-card" href="#"><span class="state-abbr">NC</span><span class="state-name">N. Carolina</span></a>
+      <a class="state-card" href="#"><span class="state-abbr">MI</span><span class="state-name">Michigan</span></a>
+      <a class="state-card" href="#"><span class="state-abbr">NJ</span><span class="state-name">New Jersey</span></a>
+      <a class="state-card" href="#"><span class="state-abbr">WA</span><span class="state-name">Washington</span></a>
+      <a class="state-card" href="#"><span class="state-abbr">AZ</span><span class="state-name">Arizona</span></a>
+      <a class="state-card" href="#"><span class="state-abbr">CO</span><span class="state-name">Colorado</span></a>
+      <a class="state-card" href="#"><span class="state-abbr">TN</span><span class="state-name">Tennessee</span></a>
+      <a class="state-card" href="#"><span class="state-abbr">OR</span><span class="state-name">Oregon</span></a>
+      <a class="state-card" href="#"><span class="state-abbr">MA</span><span class="state-name">Massachusetts</span></a>
+      <a class="state-card" href="#"><span class="state-abbr">VA</span><span class="state-name">Virginia</span></a>
+      <a class="state-card" href="#"><span class="state-abbr">MN</span><span class="state-name">Minnesota</span></a>
+      <a class="state-card" href="#"><span class="state-abbr">NV</span><span class="state-name">Nevada</span></a>
+    </div>
+  </section>
+
+  <!-- DISCLAIMER -->
+  <div class="disclaimer" id="eviction">
+    <strong>⚖️ Legal Disclaimer:</strong> RentRights provides general educational information only and is not a law firm. Nothing on this site constitutes legal advice or creates an attorney-client relationship. Laws vary by state and locality. For advice about your specific situation, consult a licensed attorney in your state.
   </div>
 
-  <div class="states-grid">
-    <a class="state-card" href="#"><span class="state-abbr">CA</span><span class="state-name">California</span></a>
-    <a class="state-card" href="#"><span class="state-abbr">TX</span><span class="state-name">Texas</span></a>
-    <a class="state-card" href="#"><span class="state-abbr">FL</span><span class="state-name">Florida</span></a>
-    <a class="state-card" href="#"><span class="state-abbr">NY</span><span class="state-name">New York</span></a>
-    <a class="state-card" href="#"><span class="state-abbr">IL</span><span class="state-name">Illinois</span></a>
-    <a class="state-card" href="#"><span class="state-abbr">PA</span><span class="state-name">Pennsylvania</span></a>
-    <a class="state-card" href="#"><span class="state-abbr">OH</span><span class="state-name">Ohio</span></a>
-    <a class="state-card" href="#"><span class="state-abbr">GA</span><span class="state-name">Georgia</span></a>
-    <a class="state-card" href="#"><span class="state-abbr">NC</span><span class="state-name">North Carolina</span></a>
-    <a class="state-card" href="#"><span class="state-abbr">MI</span><span class="state-name">Michigan</span></a>
-    <a class="state-card" href="#"><span class="state-abbr">NJ</span><span class="state-name">New Jersey</span></a>
-    <a class="state-card" href="#"><span class="state-abbr">WA</span><span class="state-name">Washington</span></a>
-    <a class="state-card" href="#"><span class="state-abbr">AZ</span><span class="state-name">Arizona</span></a>
-    <a class="state-card" href="#"><span class="state-abbr">CO</span><span class="state-name">Colorado</span></a>
-    <a class="state-card" href="#"><span class="state-abbr">TN</span><span class="state-name">Tennessee</span></a>
-    <a class="state-card" href="#"><span class="state-abbr">OR</span><span class="state-name">Oregon</span></a>
-  </div>
-
-  <!-- FAQ ACCORDION -->
-  <div class="section-head" id="faq">
-    <h2>Quick FAQ</h2>
-    <p>Fast answers to the most-searched tenant questions in the US.</p>
-  </div>
-
-  <div class="faq-list">
+  <!-- FAQ -->
+  <section class="faq-section" id="faq">
+    <div class="section-head">
+      <h2>Frequently Asked Questions</h2>
+      <div class="section-head-line"></div>
+    </div>
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">
+      <button class="faq-btn" onclick="toggleFaq(this)">
         What is a "pay or quit" notice?
         <span class="faq-icon">+</span>
       </button>
-      <div class="faq-a">
-        A "Pay or Quit" notice is the first formal step in the eviction process. Your landlord is telling you to either pay the overdue rent within a set number of days (usually 3–5) or vacate the property. Receiving this notice does NOT mean you are evicted — the landlord still has to file a court case if you don't comply.
-      </div>
+      <div class="faq-body"><p>A Pay or Quit notice is the first formal step in the eviction process. Your landlord is demanding you pay overdue rent within a set period (usually 3–5 days) or vacate the property. Receiving this notice does not mean you are evicted — the landlord must still file a court case if you don't comply or leave.</p></div>
     </div>
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">
+      <button class="faq-btn" onclick="toggleFaq(this)">
         Can a landlord charge for normal wear and tear?
         <span class="faq-icon">+</span>
       </button>
-      <div class="faq-a">
-        No. Normal wear and tear — like small nail holes, faded paint, or carpet worn from normal use — cannot be deducted from your security deposit. Landlords can only charge for damage beyond what's considered "normal," such as large holes in walls, stains, or broken fixtures caused by the tenant.
-      </div>
+      <div class="faq-body"><p>No. Normal wear and tear — small nail holes, faded paint, carpet worn from regular foot traffic — cannot be deducted from your security deposit in any US state. Landlords can only charge for damage beyond normal use, such as large holes, stains, or broken fixtures caused by the tenant.</p></div>
     </div>
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">
-        What is a "constructive eviction"?
+      <button class="faq-btn" onclick="toggleFaq(this)">
+        What is "constructive eviction"?
         <span class="faq-icon">+</span>
       </button>
-      <div class="faq-a">
-        Constructive eviction happens when a landlord makes living conditions so unbearable — by ignoring critical repairs like heat, plumbing, or safety — that a tenant is essentially forced to leave. In this case, the tenant may be able to legally break the lease without penalty and may even sue for damages.
-      </div>
+      <div class="faq-body"><p>Constructive eviction occurs when a landlord makes living conditions so uninhabitable — by ignoring critical repairs — that a tenant is effectively forced to leave. In this case, the tenant may be able to legally break the lease without penalty and may sue the landlord for damages and relocation costs.</p></div>
     </div>
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">
+      <button class="faq-btn" onclick="toggleFaq(this)">
         Do I have rights if I'm renting without a written lease?
         <span class="faq-icon">+</span>
       </button>
-      <div class="faq-a">
-        Yes! Even without a written lease, you have a verbal month-to-month tenancy, and state landlord-tenant laws still protect you fully. Your landlord must still give proper notice before entering, cannot illegally evict you, and must maintain habitable conditions.
-      </div>
+      <div class="faq-body"><p>Yes. Even without a written lease, you have a verbal month-to-month tenancy protected by your state's landlord-tenant laws. Your landlord must still provide proper entry notice, maintain habitable conditions, and follow legal eviction procedures. No written lease does not mean no rights.</p></div>
     </div>
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)">
+      <button class="faq-btn" onclick="toggleFaq(this)">
         Can a landlord refuse to rent to someone with children?
         <span class="faq-icon">+</span>
       </button>
-      <div class="faq-a">
-        No. Under the federal Fair Housing Act, landlords cannot discriminate based on "familial status," which includes families with children under 18. Exceptions exist only for qualified senior housing communities. Refusing to rent to a family with children is illegal and can result in significant penalties.
-      </div>
+      <div class="faq-body"><p>No. Under the federal Fair Housing Act, landlords cannot discriminate based on familial status, which includes families with children under 18. Exceptions exist only for certain qualified senior housing communities. Refusing to rent to a family with children is illegal and can result in significant civil penalties.</p></div>
     </div>
-  </div>
+  </section>
 
-  <!-- NEWSLETTER -->
-  <div class="newsletter">
-    <h3>Get Your State's Tenant Laws — Free</h3>
-    <p>Enter your email and we'll send you a plain-English summary of renter rights in your state.</p>
-    <div class="newsletter-form">
-      <input type="email" placeholder="your@email.com"/>
-      <button>Send Me the Guide</button>
-    </div>
-  </div>
-
-</main>
+</div><!-- end page-wrap -->
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-links">
-    <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">Privacy Policy</a>
-    <a href="#">Terms of Use</a>
-    <a href="#">Contact</a>
-    <a href="#">Disclaimer</a>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand"><span>Rent</span>Rights</div>
+      <p class="footer-desc">Free, plain-English legal guides for renters across the United States. Our mission is to make tenant rights accessible to every renter, regardless of income or legal experience.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Top Guides</h4>
+      <ul>
+        <li><a href="landlord-entry-without-notice.html">Landlord Entry</a></li>
+        <li><a href="security-deposit-laws-by-state.html">Security Deposits</a></li>
+        <li><a href="how-to-fight-eviction-notice.html">Fight Eviction</a></li>
+        <li><a href="normal-wear-and-tear-vs-damage.html">Wear & Tear</a></li>
+        <li><a href="landlord-wont-make-repairs.html">Repair Rights</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>By Topic</h4>
+      <ul>
+        <li><a href="#">Eviction</a></li>
+        <li><a href="#">Deposits</a></li>
+        <li><a href="#">Repairs</a></li>
+        <li><a href="#">Rent Increases</a></li>
+        <li><a href="#">Fair Housing</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Disclaimer</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Use</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
   </div>
-  <p>© 2026 RentRights. For informational purposes only. Not legal advice.<br/>
-  RentRights is not a law firm and does not provide legal representation.<br/>
-  Always consult a licensed attorney for advice about your specific situation.</p>
+  <div class="footer-bottom">
+    <span>© 2026 RentRights · For informational purposes only · Not legal advice</span>
+    <span>Always consult a licensed attorney for your specific situation</span>
+  </div>
 </footer>
 
 <script>
-  // FAQ Toggle
   function toggleFaq(btn) {
     const item = btn.parentElement;
     const isOpen = item.classList.contains('open');
     document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
     if (!isOpen) item.classList.add('open');
   }
-
-  // Basic search highlight (cosmetic for now)
-  function handleSearch() {
-    const val = document.getElementById('searchInput').value.trim();
-    if (val.length > 2) {
-      document.getElementById('questions').scrollIntoView({ behavior: 'smooth' });
-    }
-  }
-  document.getElementById('searchInput').addEventListener('keydown', e => {
-    if (e.key === 'Enter') handleSearch();
-  });
 </script>
-
 </body>
 </html>
